@@ -1,0 +1,112 @@
+{
+  "name": "@dalidossodautais/eslint-config",
+  "version": "0.0.7",
+  "description": "ESLint configuration from Pro/website project with custom rules",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "typescript",
+    "react",
+    "nextjs"
+  ],
+  "license": "MIT",
+  "author": "dalidossodautais",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "rules/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "deploy:major": "pnpm version major && pnpm build && pnpm publish --access public && git push --follow-tags",
+    "deploy:minor": "pnpm version minor && pnpm build && pnpm publish --access public && git push --follow-tags",
+    "deploy:patch": "pnpm version patch && pnpm build && pnpm publish --access public && git push --follow-tags",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm build"
+  },
+  "lint-staged": {
+    "*.{js,mjs,ts,tsx,json,md,ts}": [
+      "eslint"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "19.0.0",
+    "@commitlint/config-conventional": "19.0.0",
+    "@commitlint/types": "19.0.0",
+    "@eslint/js": "9.37.0",
+    "@typescript-eslint/eslint-plugin": "8.45.0",
+    "@typescript-eslint/parser": "8.45.0",
+    "@typescript-eslint/types": "8.45.0",
+    "eslint": "9.37.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-package-json": "0.56.3",
+    "eslint-plugin-perfectionist": "4.15.1",
+    "eslint-plugin-prettier": "5.5.4",
+    "eslint-plugin-react": "7.37.5",
+    "globals": "16.4.0",
+    "husky": "9.1.7",
+    "jiti": "2.6.1",
+    "lint-staged": "16.2.7",
+    "prettier": "3.0.0",
+    "typescript": "5.0.0"
+  },
+  "peerDependencies": {
+    "@eslint/js": "9.37.0",
+    "@typescript-eslint/eslint-plugin": "8.45.0",
+    "@typescript-eslint/parser": "8.45.0",
+    "eslint": "9.37.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-package-json": "0.56.3",
+    "eslint-plugin-perfectionist": "4.15.1",
+    "eslint-plugin-prettier": "5.5.4",
+    "eslint-plugin-react": "7.37.5",
+    "globals": "16.4.0"
+  },
+  "peerDependenciesMeta": {
+    "@eslint/js": {
+      "optional": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "optional": false
+    },
+    "@typescript-eslint/parser": {
+      "optional": false
+    },
+    "eslint": {
+      "optional": false
+    },
+    "eslint-config-prettier": {
+      "optional": false
+    },
+    "eslint-plugin-import": {
+      "optional": false
+    },
+    "eslint-plugin-package-json": {
+      "optional": false
+    },
+    "eslint-plugin-perfectionist": {
+      "optional": false
+    },
+    "eslint-plugin-prettier": {
+      "optional": false
+    },
+    "eslint-plugin-react": {
+      "optional": false
+    },
+    "globals": {
+      "optional": false
+    }
+  }
+}

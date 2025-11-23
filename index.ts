@@ -1,5 +1,3 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-
 import js from '@eslint/js';
 import typescript from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
@@ -94,7 +92,6 @@ const config: Linter.Config[] = [
       '@typescript-eslint/prefer-nullish-coalescing': 'error',
       '@typescript-eslint/prefer-optional-chain': 'error',
       'array-callback-return': ['error', { allowImplicit: true }],
-      // Custom rules
       'custom-rules/no-box-flex': 'error',
       'custom-rules/no-empty-sx': 'error',
       'custom-rules/no-relative-imports': 'error',
@@ -153,7 +150,6 @@ const config: Linter.Config[] = [
       'no-throw-literal': 'error',
       'no-underscore-dangle': 'off',
       'no-unneeded-ternary': 'error',
-      // Airbnb best practices - General
       'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
       'no-use-before-define': 'off',
       'no-useless-concat': 'error',
@@ -162,7 +158,6 @@ const config: Linter.Config[] = [
       'object-shorthand': ['error', 'always'],
       'perfectionist/sort-interfaces': ['error', { order: 'asc', type: 'alphabetical' }],
       'perfectionist/sort-object-types': ['error', { order: 'asc', type: 'alphabetical' }],
-      // Sorting rules
       'perfectionist/sort-objects': ['error', { order: 'asc', type: 'alphabetical' }],
       'prefer-arrow-callback': 'error',
       'prefer-const': 'error',
@@ -195,7 +190,6 @@ const config: Linter.Config[] = [
       'react/jsx-no-undef': 'error',
       'react/jsx-pascal-case': 'error',
       'react/jsx-props-no-spreading': 'off',
-      // Airbnb-inspired rules - React
       'react/jsx-sort-props': [
         'error',
         {
@@ -235,9 +229,9 @@ const config: Linter.Config[] = [
       'react/no-multi-comp': ['error', { ignoreStateless: false }],
       'react/no-unused-state': 'error',
 
-      'react/prop-types': 'off', // Using TypeScript for prop validation
+      'react/prop-types': 'off',
 
-      'react/react-in-jsx-scope': 'off', // Not needed in Next.js
+      'react/react-in-jsx-scope': 'off',
       'react/require-default-props': 'off',
       'react/self-closing-comp': 'error',
       yoda: 'error'
@@ -330,7 +324,6 @@ const config: Linter.Config[] = [
     }
   },
   {
-    // Disable no-relative-imports for internal module files
     files: ['index.ts', 'eslint.config.ts', 'rules/**/*.ts'],
     rules: {
       'custom-rules/no-relative-imports': 'off'

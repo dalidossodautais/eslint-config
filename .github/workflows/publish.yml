@@ -39,7 +39,7 @@ jobs:
       - name: Run lint
         run: pnpm run lint
         env:
-          NODE_OPTIONS: '--loader jiti/register'
+          NODE_OPTIONS: '--import jiti/register'
 
       - name: Extract version from tag
         if: github.event_name == 'push'

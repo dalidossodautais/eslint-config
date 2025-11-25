@@ -1,6 +1,6 @@
 {
   "name": "@dalidossodautais/eslint-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ESLint configuration from Pro/website project with custom rules",
   "keywords": [
     "eslint",

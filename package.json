@@ -22,7 +22,7 @@
     "husky": "9.1.7",
     "jiti": "2.6.1",
     "lint-staged": "16.2.7",
-    "prettier": "3.0.0",
+    "prettier": "3.6.2",
     "typescript": "5.9.3"
   },
   "exports": {
@@ -52,6 +52,8 @@
   "name": "@dalidossodautais/eslint-config",
   "peerDependencies": {
     "@eslint/js": "9.37.0",
+    "@eslint/json": "0.14.0",
+    "@eslint/markdown": "7.5.1",
     "@typescript-eslint/eslint-plugin": "8.45.0",
     "@typescript-eslint/parser": "8.45.0",
     "eslint": "9.37.0",
@@ -62,41 +64,6 @@
     "eslint-plugin-prettier": "5.5.4",
     "eslint-plugin-react": "7.37.5",
     "globals": "16.4.0"
-  },
-  "peerDependenciesMeta": {
-    "@eslint/js": {
-      "optional": false
-    },
-    "@typescript-eslint/eslint-plugin": {
-      "optional": false
-    },
-    "@typescript-eslint/parser": {
-      "optional": false
-    },
-    "eslint": {
-      "optional": false
-    },
-    "eslint-config-prettier": {
-      "optional": false
-    },
-    "eslint-plugin-import": {
-      "optional": false
-    },
-    "eslint-plugin-package-json": {
-      "optional": false
-    },
-    "eslint-plugin-perfectionist": {
-      "optional": false
-    },
-    "eslint-plugin-prettier": {
-      "optional": false
-    },
-    "eslint-plugin-react": {
-      "optional": false
-    },
-    "globals": {
-      "optional": false
-    }
   },
   "scripts": {
     "build": "tsc",

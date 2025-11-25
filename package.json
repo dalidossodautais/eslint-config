@@ -32,7 +32,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build",
+    "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
     "*.{js,mjs,ts,tsx,json,md,ts}": [

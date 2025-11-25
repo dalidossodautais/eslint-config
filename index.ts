@@ -337,6 +337,7 @@ const config: Linter.Config[] = [
       '**/coverage/**',
       '**/dist/**',
       '**/.next/**',
+      '**/next-env.d.ts',
       '**/*.min.js'
     ]
   },

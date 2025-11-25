@@ -376,17 +376,6 @@ const config: Linter.Config[] = [
       ]
     }
   },
-  {
-    ignores: [
-      'node_modules/',
-      '**/build/**',
-      '**/coverage/**',
-      '**/dist/**',
-      '**/.next/**',
-      '**/next-env.d.ts',
-      '**/*.min.js'
-    ]
-  },
   prettierConfig,
   {
     files: ['*.{ts,tsx,js,jsx,cjs,mjs}', '**/*.{ts,tsx,js,jsx,cjs,mjs}'],

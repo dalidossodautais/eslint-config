@@ -118,7 +118,7 @@ This configuration includes:
 
 ## Project Structure
 
-```
+```text
 @dalidossodautais/eslint-config/
 ├── .husky/                # Git hooks (Husky)
 │   ├── commit-msg         # Hook to verify commits
@@ -146,7 +146,7 @@ This project uses [Conventional Commits](https://www.conventionalcommits.org/) t
 
 Commit messages must follow this format:
 
-```
+```text
 <type>(<scope>): <subject>
 
 [optional body]

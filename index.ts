@@ -1,4 +1,6 @@
 import js from '@eslint/js';
+import json from '@eslint/json';
+import markdown from '@eslint/markdown';
 import typescript from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
 import type { Linter } from 'eslint';
@@ -38,6 +40,12 @@ const importOrderConfig: Linter.RuleEntry = [
 ];
 
 const config: Linter.Config[] = [
+  {
+    plugins: {
+      json: json as Record<string, unknown>,
+      markdown: markdown as Record<string, unknown>
+    }
+  },
   {
     files: ['*.{ts,tsx}', '**/*.{ts,tsx}'],
     languageOptions: {
@@ -316,6 +324,44 @@ const config: Linter.Config[] = [
         }
       ],
       quotes: ['error', 'single', { allowTemplateLiterals: false, avoidEscape: true }]
+    }
+  },
+  {
+    files: ['*.json', '**/*.json'],
+    language: 'json/json',
+    rules: {
+      'json/no-duplicate-keys': 'error',
+      'json/no-empty-keys': 'error',
+      'json/no-unnormalized-keys': 'error',
+      'json/no-unsafe-values': 'error',
+      'json/sort-keys': ['error', 'asc', { caseSensitive: false, natural: true }],
+      'json/top-level-interop': 'error'
+    }
+  },
+  {
+    files: ['*.md', '**/*.md'],
+    language: 'markdown/commonmark',
+    rules: {
+      'markdown/fenced-code-language': 'error',
+      'markdown/heading-increment': 'error',
+      'markdown/no-bare-urls': 'error',
+      'markdown/no-duplicate-definitions': 'error',
+      'markdown/no-duplicate-headings': 'error',
+      'markdown/no-empty-definitions': 'error',
+      'markdown/no-empty-images': 'error',
+      'markdown/no-empty-links': 'error',
+      'markdown/no-html': 'error',
+      'markdown/no-invalid-label-refs': 'error',
+      'markdown/no-missing-atx-heading-space': 'error',
+      'markdown/no-missing-label-refs': 'error',
+      'markdown/no-missing-link-fragments': 'error',
+      'markdown/no-multiple-h1': 'error',
+      'markdown/no-reference-like-urls': 'error',
+      'markdown/no-reversed-media-syntax': 'error',
+      'markdown/no-space-in-emphasis': 'error',
+      'markdown/no-unused-definitions': 'error',
+      'markdown/require-alt-text': 'error',
+      'markdown/table-column-count': 'error'
     }
   },
   {

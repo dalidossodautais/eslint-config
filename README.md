@@ -25,18 +25,73 @@ This package requires the following peer dependencies:
 - `eslint-plugin-package-json`: ^0.0.0
 - `eslint-plugin-perfectionist`: ^4.0.0
 - `eslint-plugin-prettier`: ^5.0.0
-- `eslint-plugin-react`: ^7.0.0
+- `eslint-plugin-react`: ^7.0.0 (optional, only if using React)
+- `eslint-plugin-jest`: ^28.0.0 (optional, only if using Jest)
 - `globals`: ^16.0.0
 
 ## Usage
 
-In your `eslint.config.mjs` file:
+### Default (without React or Jest)
+
+By default, the configuration does not include React or Jest rules:
 
 ```javascript
 import eslintConfig from '@dalidossodautais/eslint-config';
 
 export default [
   ...eslintConfig,
+  // Your additional configurations if needed
+];
+```
+
+### With React
+
+To enable React rules:
+
+```javascript
+import { createConfig } from '@dalidossodautais/eslint-config';
+
+export default [
+  ...createConfig({ react: true }),
+  // Your additional configurations if needed
+];
+```
+
+### With React (explicit)
+
+You can also explicitly enable React rules:
+
+```javascript
+import { createConfig } from '@dalidossodautais/eslint-config';
+
+export default [
+  ...createConfig({ react: true }),
+  // Your additional configurations if needed
+];
+```
+
+### With Jest
+
+To enable Jest rules for test files:
+
+```javascript
+import { createConfig } from '@dalidossodautais/eslint-config';
+
+export default [
+  ...createConfig({ jest: true }),
+  // Your additional configurations if needed
+];
+```
+
+### Combined Options
+
+You can combine multiple options:
+
+```javascript
+import { createConfig } from '@dalidossodautais/eslint-config';
+
+export default [
+  ...createConfig({ react: true, jest: true }),
   // Your additional configurations if needed
 ];
 ```
